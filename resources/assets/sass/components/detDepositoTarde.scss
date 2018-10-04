@@ -1,0 +1,74 @@
+	@media (min-width: 100px) and (max-width: 450px){
+		#miniBtn{
+			/*background-image: url("mail2.png");*/
+			font-size:13px;
+		}
+
+		#miniText{
+			font-size:10px;
+		}
+	}
+
+	@media (min-width: 450px) and (max-width: 2000px){
+		#miniBtn{
+			/*background-image: url("mail2.png");*/
+			font-size:15px;
+		}
+	}
+
+	@media (min-width: 100px) and (max-width: 992px){
+		#fontTrTabla{
+			/*background-image: url("mail2.png");*/
+			font-size:10px;
+		}
+
+		#tblSemaforo, #tblSemafTotalizado{
+			font-size:10px;	
+		}
+
+		#imgCorreo{
+			width: 150%;
+		}
+
+		#divCorreo2{
+			width: 30px;
+		}
+
+		#imgCorreo2{
+			width: 70%;
+		}
+
+	}
+
+	@media (min-width: 992px) and (max-width: 2000px){
+		#fontTrTabla{
+			/*background-image: url("mail2.png");*/
+			font-size:13px;
+		}
+		#tblSemaforo, #tblSemafTotalizado{
+			font-size:13px;	
+		}
+
+		#imgCorreo{
+			width: 150%;
+		}
+
+		#divCorreo2{
+			width: 35px;
+		}
+
+		#imgCorreo2{
+			width: 70%;
+		}		
+	}
+
+	.alertita1 {
+		position: fixed;
+		display:block; 
+		top:50%; 
+		right:20%;
+		left: 20%;
+		z-index: 99;
+			/*border-color: black;
+			border:solid 1px;*/
+		}

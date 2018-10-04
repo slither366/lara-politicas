@@ -83,3 +83,54 @@ body {
 }
 
 
+@media (min-width: 100px) and (max-width: 400px){
+	.Titulo{
+		font-size:20px;
+		font-weight: bold;
+	}
+	
+	#icoImg{
+		width: 90%;
+	}
+
+	#icoImg2{
+		width: 60%;
+	}
+	
+	#tit1{
+		font-size:16px;
+		text-align: right;
+		line-height: 1.2;
+	}			
+}
+
+@media (min-width: 400px) and (max-width: 576px){
+	#icoImg{
+		width: 60%;
+	}
+
+	#icoImg2{
+		width: 35%;
+	}
+
+	#tit1{
+		font-size:18px;
+		text-align: right;
+		line-height: 1.2;
+	}						
+}
+
+@media (min-width: 576px) and (max-width: 2000px){
+	#icoImg{
+		width: 95%;
+	}
+
+	#icoImg2{
+		width: 60%;
+	}
+	#tit1{
+		font-size:18px;
+		text-align: right;
+		line-height: 1.2;
+	}	
+}

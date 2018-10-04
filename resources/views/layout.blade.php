@@ -4,8 +4,13 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" type="text/css" href="/css/app.css">
+	<!--<script src="/node_modules/jquery/dist/jquery.min.js" crossorigin="anonymous"></script>-->
+	<!--<script src="/js/app.js" crossorigin="anonymous"></script>-->
+	<script src="{{ asset('/js/jquery-3.3.1.min.js') }}"></script>
+	@yield('script')
 </head>
 <body>
+	
 	<nav class="navbar navbar-expand-sm navbar-expand-md navbar-expand-lg navbar-dark sticky-top mt-0 pt-0 pb-0 mb-0" id="pruebita1">
 
 		<a class="navbar-brand pt-0 mt-0 mb-0 pb-0" href="{{route('principal')}}" id="pruebita1">
@@ -30,5 +35,7 @@
 	</nav>	
 
 	@yield('contenido')
+
+
 </body>
 </html>

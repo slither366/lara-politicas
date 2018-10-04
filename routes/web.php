@@ -13,19 +13,19 @@
 
 Route::get('/', function () {
     //return "Bienvenidos Vista Principal";
-    return view('principal');
+    return view('logeo');
     //echo "<a href=".route('contac').">Contactos</a>";
 });
 
 Route::get('/',['as'=>'principal',function(){
-	return view('principal');
+	return view('logeo');
 }]);
-
+/*
 Route::post('inicio',function(){
 	//return "hola";
 	return view('inicio');
 });
-
+*/
 Route::get('Transferencias',['as'=>'viewTransferencias',function(){
 	return view('transferencias/transfer_pendientes');
 }]);
@@ -33,6 +33,12 @@ Route::get('Transferencias',['as'=>'viewTransferencias',function(){
 Route::get('Depositos',['as'=>'viewDepositos',function(){
 	return view('depositos/deposito_pendiente');
 }]);
+
+Route::get('Remesas',['as'=>'viewRemesas',function(){
+	return view('remesas/remesasFueraRango');
+}]);
+
+Route::post('datos','PagesController@validaLogeo');
 
 //Route::get()
 /*

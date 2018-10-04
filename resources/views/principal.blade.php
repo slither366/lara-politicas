@@ -15,7 +15,8 @@
 					<div class="d-flex flex-row bd-highlight justify-content-between mt-0 pt-0 cardBodyFlex1">
 						<div class="d-flex bd-highlight cardBodyFlex2">
 							<div class="align-self-center">
-								<a><img src= "images/shipped.svg" id="icoImg"></a>
+								<!--<a><img src= "img/shipped.svg" id="icoImg"></a>-->
+                                <img id="icoImg" src="{{ asset('img/shipped.svg') }}">
 							</div>
 						</div>
 						<div class="bd-highlight mt-0 pt-0 cardBodyFlex3">
@@ -36,7 +37,7 @@
 						</div>
 						<div class="align-self-center" id="cardImg1">
 							<div class="divImages">
-								<a><img src= "images/right-arrow.svg" id="icoImg2"></a>
+								<a><img id="icoImg2" src="{{ asset('img/right-arrow.svg') }}"></a>
 							</div>
 						</div>
 					</div>
@@ -51,7 +52,7 @@
 					<div class="d-flex flex-row bd-highlight justify-content-between mt-0 pt-0 cardBodyFlex1">
 						<div class="d-flex bd-highlight cardBodyFlex2">
 							<div class="align-self-center">
-								<a><img src= "images/bank.svg" id="icoImg"></a>
+								<a><img id="icoImg" src="{{ asset('img/bank.svg') }}"></a>
 							</div>
 						</div>
 						<div class="bd-highlight mt-0 pt-0 cardBodyFlex3">
@@ -71,7 +72,7 @@
 						</div>
 						<div class="align-self-center" id="cardImg2">
 							<div class="divImages">
-								<a><img src= "images/right-arrow2.svg" id="icoImg2"></a>
+								<a><img id="icoImg2" src="{{ asset('img/right-arrow2.svg') }}"></a>
 							</div>
 						</div>
 					</div>
@@ -86,7 +87,7 @@
 					<div class="d-flex flex-row bd-highlight justify-content-between mt-0 pt-0 cardBodyFlex1">
 						<div class="d-flex bd-highlight cardBodyFlex2">
 							<div class="align-self-center">
-								<a><img src= "images/24hours2.svg" id="icoImg"></a>
+								<a><img id="icoImg" src="{{ asset('img/24hours2.svg') }}"></a>
 							</div>
 						</div>
 						<div class="bd-highlight mt-0 pt-0 cardBodyFlex3">
@@ -99,14 +100,14 @@
 					</div>
 
 				</div>
-				<div class="card-footer bg-light mt-0 pt-0 mb-0 pb-0" id="etiqueta" onclick="location.href='remesas/remesasFueraRango.php';">
+				<div class="card-footer bg-light mt-0 pt-0 mb-0 pb-0" id="etiqueta" onclick="location.href='{{ route('viewRemesas') }}';">
 					<div class="d-flex flex-row justify-content-between cardFooterFlex1">
 						<div class="align-self-center" id="cardDet3">
 							Ver Detalle
 						</div>
 						<div class="align-self-center" id="cardImg3">
 							<div class="divImages">
-								<a><img src= "images/right-arrow3.svg" id="icoImg2"></a>
+								<a><img id="icoImg2" src="{{ asset('img/right-arrow3.svg') }}"></a>
 							</div>
 						</div>
 					</div>
@@ -138,7 +139,7 @@
 						</div>
 						<div class="align-self-center" id="cardImg4">
 							<div class="divImages">
-								<a><img src= "images/right-arrow4.svg" id="icoImg2"></a>
+								<a><img id="icoImg2" src="{{ asset('img/right-arrow4.svg') }}"></a>
 							</div>
 						</div>
 					</div>
@@ -170,7 +171,7 @@
 						</div>
 						<div class="align-self-center" id="cardImg5">
 							<div class="divImages">
-								<a><img src= "images/right-arrow4.svg" id="icoImg2"></a>
+								<a><img id="icoImg2" src="{{ asset('img/right-arrow4.svg') }}"></a>
 							</div>
 						</div>
 					</div>
@@ -202,7 +203,7 @@
 						</div>
 						<div class="align-self-center" id="cardImg6">
 							<div class="divImages">
-								<a><img src= "images/right-arrow3.svg" id="icoImg2"></a>
+								<a><img id="icoImg2" src="{{ asset('img/right-arrow3.svg') }}"></a>
 							</div>
 						</div>
 					</div>
@@ -234,7 +235,7 @@
 						</div>
 						<div class="align-self-center" id="cardImg7">
 							<div class="divImages">
-								<a><img src= "images/right-arrow2.svg" id="icoImg2"></a>
+								<a><img id="icoImg2" src="{{ asset('img/right-arrow2.svg') }}"></a>
 							</div>
 						</div>
 					</div>
@@ -266,7 +267,7 @@
 						</div>
 						<div class="align-self-center" id="cardImg8">
 							<div class="divImages">
-								<a><img src= "images/right-arrow.svg" id="icoImg2"></a>
+								<a><img id="icoImg2" src="{{ asset('img/right-arrow.svg') }}"></a>
 							</div>
 						</div>
 					</div>
@@ -298,7 +299,7 @@
 						</div>
 						<div class="align-self-center" id="cardImg9">
 							<div class="divImages">
-								<a><img src= "images/right-arrow3.svg" id="icoImg2"></a>
+								<a><img id="icoImg2" src="{{ asset('img/right-arrow3.svg') }}"></a>
 							</div>
 						</div>
 					</div>

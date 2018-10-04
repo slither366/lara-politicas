@@ -2,6 +2,30 @@
 
 @section('contenido')
 
+<div id="overlay"></div>
+
+<div class="alertita1" style="display:none;">
+	<div class="row justify-content-center">
+		<div class="col col-xl-4 col-lg-4 col-md-5 col-sm-6 col-10 text-center alert alert-success" role="alert" id="divAlertInt1">
+			Enviar Correo a C54.
+		</div>
+	</div>
+</div>
+
+<div class="alertita2" style="display:none;">
+	<div class="row justify-content-center">
+		<div class="col col-xl-4 col-lg-4 col-md-5 col-sm-6 col-10 text-center alert alert-warning" role="alert" id="divAlertInt2">
+			Se esta enviando el Correo...
+		</div>
+	</div>
+</div>
+
+<div class="linkCorreo">
+	<div >
+		<a onclick="armarListaCorreos();return false;"><img src="{{ asset('img/mail.svg') }}" id="imgCorreo"></a>
+	</div>
+</div>
+
 <section class="container">
 
 	<div class="pl-4 mt-4 pt-0">
@@ -56,4 +80,127 @@
 	</div>
 </section>
 
-@stop
+@endsection
+
+@section('script')
+
+<script type="text/javascript">
+
+	function mostrarDetGuias(ori, dest, jefeDest,oriDesc,destDesc){
+		var parametros = {
+			"origen" : ori,
+			"destino" : dest,
+			"jefeDestino": jefeDest,
+			"oriDesc" : oriDesc,
+			"destDesc" : destDesc
+		};
+		$.ajax({
+			data:  parametros,
+			url:   'detGuiasTabla.php',
+			type:  'post',
+			beforeSend: function () {
+				$("#wait_1").html("Procesando, espere por favor Procesando...");
+			},
+			success:  function (response) {
+				$("#jbtDetalle").html(response);
+			}
+		});
+	}
+
+	function mostrarEnvioCorreo(mailDest){
+		var parametros = {
+			"correo_dest" : mailDest
+		};
+		$.ajax({
+			data:  parametros,
+			url:   '../formEnviarCorreo.php',
+			type:  'post',
+			beforeSend: function () {
+				$("#wait_2").html("Procesando, espere por favor Procesando...");
+			},
+			success:  function (response) {
+				$("#frmCorreo").html(response);
+			}
+		});
+	}
+
+	function enviarCorreo(){
+		var parametros = {
+			"vTitulo" : $("#titulo").val(),
+			"vEmails" : $("#emails").val(),
+			"vdetCorreo" : $("#detCorreo").val()
+		};
+		$.ajax({
+			data:  parametros,
+			url:   'enviarMail.php',
+			type:  'post',
+			beforeSend: function () {
+					//$('#bodyTransfer').block();
+					bloquearPantalla();
+					$("#divAlertInt2").html("Enviando Correo...");
+					$(".alertita2").fadeIn(1000);
+				},
+				success:  function (response) {
+					//$('#bodyTransfer').unblock();
+					$(".alertita2").fadeOut(500);
+					alertaPantalla("Envío de Correo Exitoso!");
+					desbloquearPantalla()
+					//$("#frmCorreo").html(response);
+				}
+			});
+	}
+
+	function alertaPantalla(mensaje){
+		$("#divAlertInt1").html(mensaje);
+		$(".alertita1").fadeIn(2000);
+		$(".alertita1").fadeOut(2000);
+	}
+
+	function alertaPantalla2(mensaje){
+		$("#divAlertInt2").html(mensaje);
+		$(".alertita2").fadeIn(3000);
+		$(".alertita2").fadeOut(3000);
+	}
+
+	function bloquearPantalla(){
+		$("#overlay").show();		
+	}
+
+	function desbloquearPantalla(){
+		$("#overlay").hide();
+	}
+
+	$(document).ready(function(){
+		$("input:checkbox:checked").click(function() {
+
+			if(($("#"+$(this).attr("id")).is(':checked'))) {
+				$local = $(this).attr("id").substring(3,7);
+				alertaPantalla("Enviar Mail al" + $local);
+			} else {  
+						//$("#divAlertInt").html("Cambio!");  
+					}  
+				});	
+	});
+
+	function armarListaCorreos(){
+		var correosFrom = "";
+		$("input:checkbox:checked").each(function(){
+								//alert($(this).val());
+								//alert($(this).attr("id"));
+								correosFrom = correosFrom + $(this).val() + ";";
+							});
+					//alert(correosFrom);
+					mostrarEnvioCorreo(correosFrom);
+				}
+
+				$(window).ready(function(){
+
+					$("input:checkbox:checked").click(function() {
+						armarListaCorreos();
+					});
+
+				});
+
+</script>
+
+@endsection
