@@ -1,0 +1,85 @@
+body {
+	padding-top: 0px;
+	padding-bottom: 20px;
+	background-color: #F3F3F3;
+}
+
+#etiqueta{
+	cursor:pointer;
+}
+
+#card1,#card8{
+	background: #3880C8;
+}
+
+#cardDet1,#cardDet8,#cardImg1,#cardImg8{
+	color: #3880C8;
+}
+
+#card2,#card7{
+	background: #56AF41;
+}
+
+#cardDet2,#cardDet7,#cardImg2,#cardImg7{
+	color: #56AF41;
+}
+
+#card3,#card6,#card9{
+	background: #E99926;
+}
+
+#cardDet3,#cardDet6,#cardDet9,#cardImg3,#cardImg6,#cardImg9{
+	color: #E99926;
+}
+
+#card4,#card5{
+	background: #DA4235;
+}
+
+#cardDet4,#cardDet5,#cardImg4,#cardImg5{
+	color: #DA4235;
+}
+
+#cardDet1,#cardDet2,#cardDet3,#cardDet4,#cardDet5,#cardDet6,#cardDet7#cardDet8,#cardDet9{
+	width: 60%;
+}
+
+#cardImg1,#cardImg2,#cardImg3,#cardImg4,#cardImg5,#cardImg6,#cardImg7,#cardImg8,#cardImg9{
+	width: 20%;	
+}
+
+.divImages{
+	text-align: right;
+}
+
+.cardFooterFlex1{
+	height:40px;
+}
+
+.cardBodyFlex1{
+	height: 100px;
+}
+
+.cardBodyFlex2{
+	width: 40%;height: 100%;text-align:center;
+}
+
+.cardBodyFlex3{
+	width: 60%;
+	height: 100%;
+}
+
+.cardBodyFlex4{
+	height: 100%;
+}
+
+.cardBodyFlex5{
+	line-height: 0.7;
+}
+
+.cardBodyFlex6{
+	margin:0px;
+	padding: 0px;
+}
+
+
