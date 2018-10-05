@@ -10,23 +10,48 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
     //return "Bienvenidos Vista Principal";
-    return view('logeo');
+    return view('welcome');
     //echo "<a href=".route('contac').">Contactos</a>";
 });
+*/
+        // Authentication Routes...
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
-Route::get('/',['as'=>'principal',function(){
-	return view('logeo');
+// Registration Routes...
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('register', 'Auth\RegisterController@register');
+
+// Password Reset Routes...
+Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/',['as'=>'viewLogeo', function(){
+	return view('layouts/app');
 }]);
+
+/*
+Route::get('Principal',['as'=>'viewPrincipal', function(){
+	return "vacio";
+}]);
+*/
+
 /*
 Route::post('inicio',function(){
 	//return "hola";
 	return view('inicio');
 });
 */
-Route::get('Transferencias',['as'=>'viewTransferencias',function(){
+/*Route::get('Transferencias',['as'=>'viewTransferencias',function(){
 	return view('transferencias/transfer_pendientes');
 }]);
 
@@ -39,6 +64,8 @@ Route::get('Remesas',['as'=>'viewRemesas',function(){
 }]);
 
 Route::post('datos','PagesController@validaLogeo');
+
+Route::get('usuarios/create',['as'=>'usuarios.create','uses'=>'UsuariosController@create']);*/
 
 //Route::get()
 /*
@@ -53,6 +80,7 @@ Route::get('contactos', ['as' => 'contac', function(){
 	echo "<a href=".route('home').">back.</a>";
 }]);
 */
-Auth::routes();
+/*Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+*/

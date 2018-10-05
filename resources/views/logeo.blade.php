@@ -10,14 +10,14 @@
 
 	<style>
 
-		.slider{
-			height: 100vh;
-			background: #b0ecff;
-			background-size: cover;
-			background-position: center;
-		}
+	.slider{
+		height: 100vh;
+		background: #b0ecff;
+		background-size: cover;
+		background-position: center;
+	}
 
-	</style>
+</style>
 </head>
 <body>
 
@@ -33,7 +33,8 @@
 
 					<div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
 
-					<form id="loginform" class="form-horizontal" role="form" action="<?php /*$_SERVER['PHP_SELF']*/ ?>" method="POST" autocomplete="off">
+					<form id="loginform" class="form-horizontal" role="form" action="{{ route('viewLogeo') }}" method="POST" autocomplete="off">
+
 						<div class="form-group">
 							<label for="">Usuario:</label>
 							<input id="usuario" type="text" placeholder="usuario o email" class="form-control" name="usuario" value="" >
@@ -49,10 +50,10 @@
 						</div>
 					</form>
 					<?php
-						/*echo resultBlock($errors);*/
+					/*echo resultBlock($errors);*/
 					?>	
 					<div class="d-flex justify-content-end">
-						<span class="badge badge-pill badge-warning"><a href="recupera.php" class="text-white">Recuperar Password!</a></span>
+						<span class="badge badge-pill badge-warning"><a href="{{ route('viewLogeo') }}" class="text-white">Recuperar Password!</a></span>
 					</div>					
 				</div>
 			</div>

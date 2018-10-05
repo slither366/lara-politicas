@@ -15,4 +15,8 @@ class PagesController extends Controller
 		]);
 	}
 
+	public function principal(){
+		return view('principal');
+	}
+
 }
