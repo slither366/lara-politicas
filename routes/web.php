@@ -32,7 +32,6 @@ Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail'
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
-
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/',['as'=>'viewLogeo', function(){
@@ -84,3 +83,15 @@ Route::get('contactos', ['as' => 'contac', function(){
 
 Route::get('/home', 'HomeController@index')->name('home');
 */
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
