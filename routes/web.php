@@ -38,11 +38,34 @@ Route::get('/',['as'=>'viewLogeo', function(){
 	return view('layouts/app');
 }]);
 
-/*
-Route::get('Principal',['as'=>'viewPrincipal', function(){
-	return "vacio";
+//---------------------------------------------------------
+
+Route::get('postDepositosPendientes',['as'=>'depositos.index','uses'=>'DeposPendController@index']);
+
+Route::get('postDepositosPendientes/create',['as'=>'depositos.create','uses'=>'DeposPendController@create']);
+
+Route::post('postDepositosPendientes',['as'=>'depositos.store','uses'=>'DeposPendController@store']);
+
+//---------------------------------------------------------
+Route::get('Principal', ['as'=>'viewPrincipal',function(){
+	return view('principal');
+	//return "Principal";
 }]);
-*/
+
+Route::get('Transferencias',['as'=>'viewTransferencias',function(){
+	//return view('transferencias/transfer_pendientes');
+	return "Transferencias";
+}]);
+
+Route::get('Depositos',['as'=>'viewDepositos',function(){
+	//return view('depositos/deposito_pendiente');
+	return "Depositos";
+}]);
+
+Route::get('Remesas',['as'=>'viewRemesas',function(){
+	//return view('remesas/remesasFueraRango');
+	return "Remesas";
+}]);
 
 /*
 Route::post('inicio',function(){
@@ -50,17 +73,8 @@ Route::post('inicio',function(){
 	return view('inicio');
 });
 */
-/*Route::get('Transferencias',['as'=>'viewTransferencias',function(){
-	return view('transferencias/transfer_pendientes');
-}]);
+/*
 
-Route::get('Depositos',['as'=>'viewDepositos',function(){
-	return view('depositos/deposito_pendiente');
-}]);
-
-Route::get('Remesas',['as'=>'viewRemesas',function(){
-	return view('remesas/remesasFueraRango');
-}]);
 
 Route::post('datos','PagesController@validaLogeo');
 

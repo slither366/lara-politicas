@@ -1,6 +1,6 @@
-@extends('layout')
+@extends('layouts.app')
 
-@section('contenido')
+@section('content')
 
 <div id="overlay"></div>
 
