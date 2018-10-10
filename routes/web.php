@@ -42,7 +42,7 @@ Route::get('/',['as'=>'viewLogeo', function(){
 
 Route::get('postDepositosPendientes',['as'=>'depositos.index','uses'=>'DeposPendController@index']);
 
-Route::get('postDepositosPendientes/create',['as'=>'depositos.create','uses'=>'DeposPendController@create']);
+Route::get('postDepositosPendientes/create',['as'=>'depositospendientes.create','uses'=>'DeposPendController@create']);
 
 Route::post('postDepositosPendientes',['as'=>'depositos.store','uses'=>'DeposPendController@store']);
 
@@ -97,14 +97,6 @@ Route::get('contactos', ['as' => 'contac', function(){
 
 Route::get('/home', 'HomeController@index')->name('home');
 */
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 

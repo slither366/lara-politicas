@@ -13,7 +13,7 @@ class CreateDepositoPendienteTable extends Migration
      */
     public function up()
     {
-        Schema::create('depositoPendiente', function (Blueprint $table) {
+        Schema::create('depositopendiente', function (Blueprint $table) {
             $table->increments('id')->index();
             $table->char('cod_local',3);
             $table->string('dia_mes',10);

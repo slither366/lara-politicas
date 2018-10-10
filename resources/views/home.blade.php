@@ -16,6 +16,11 @@
 
                     You are logged in!
                 </div>
+
+                <nav>
+                    <a href="{{ route('depositospendientes.create') }}">Depositos Pendientes</a>
+                </nav>
+
             </div>
         </div>
     </div>

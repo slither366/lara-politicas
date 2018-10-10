@@ -65,7 +65,7 @@
 					</div>
 				</div>
 				<div class="card-footer bg-light mt-0 pt-0 mb-0 pb-0" id="etiqueta" 
-                    onclick="location.href='{{ route('viewDepositos') }}';">
+                    onclick="location.href='{{ route('home') }}';">
 					<div class="d-flex flex-row justify-content-between cardFooterFlex1">
 						<div class="align-self-center" id="cardDet2">
 							Ver Detalle

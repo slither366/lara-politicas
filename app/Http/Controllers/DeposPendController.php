@@ -1,7 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
 
+
+namespace App\Http\Controllers;
+use DB;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class DeposPendController extends Controller
@@ -26,6 +29,7 @@ class DeposPendController extends Controller
     //
     public function create()
     {
+        //return "Mostrar Formaulario de creacíón de Deposito!";
         return view('depositos.createDeposito');
     }
 
@@ -44,8 +48,14 @@ class DeposPendController extends Controller
             "num_doc_jef_zona" => $request->input('num_doc_jef_zona'),
             "created_at" => Carbon::now(),
         ]);
+        
+        return "Hecho!";
 
-        return redirect()->route('depositos.index');
+        //return redirect()->route('depositos.index');
+
+        //return "Guardar y Redireccionar";
+        //return $request->all();
+        //input('cod_local');
     }
 
     /**
