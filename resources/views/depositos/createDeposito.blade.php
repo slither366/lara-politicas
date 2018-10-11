@@ -8,7 +8,7 @@
 	</div>
 
 	<form method="POST" action="{{ route('depositos.store') }}" >
-		{!! csrf_field() !!}
+	
 		<p><label for="cod_local">
 			Local:
 			<input type="text" name="cod_local" value="">

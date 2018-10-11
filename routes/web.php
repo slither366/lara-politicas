@@ -38,7 +38,7 @@ Route::get('/',['as'=>'viewLogeo', function(){
 	return view('layouts/app');
 }]);
 
-//---------------------------------------------------------
+//----------------------------- REST DEPOSITOS PENDIENTES ----------------------------
 
 Route::get('postDepositosPendientes',['as'=>'depositos.index','uses'=>'DeposPendController@index']);
 
@@ -46,7 +46,13 @@ Route::get('postDepositosPendientes/create',['as'=>'depositospendientes.create',
 
 Route::post('postDepositosPendientes',['as'=>'depositos.store','uses'=>'DeposPendController@store']);
 
-//---------------------------------------------------------
+Route::delete('deleteDepositosPendientes',['as'=>'depositos.delete','uses'=>'DeposPendController@destroyall']);
+
+Route::delete('deleteDepositosPendientes/{id}',['as'=>'depositos.id.delete','uses'=>'DeposPendController@destroy']);
+
+Route::put('deleteDepositosPendientes/{id}',['as' => 'depositos.update','uses'=>'DeposPendController@update']);
+
+//--------------------------------------------------------------------------------------
 Route::get('Principal', ['as'=>'viewPrincipal',function(){
 	return view('principal');
 	//return "Principal";

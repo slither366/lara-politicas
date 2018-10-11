@@ -89,7 +89,13 @@ class DeposPendController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        DB::table('depositoPendiente')->where('id',$id)->update([
+            "cod_local" => $request->input('cod_local'),
+            "dia_mes" => $request->input('dia_mes'),
+            "fecha_mes" => $request->input('fecha_mes'),
+            "num_doc_jef_zona" => $request->input('num_doc_jef_zona'),
+            "updated_at" => Carbon::now(),
+        ]);
     }
 
     /**
@@ -100,6 +106,20 @@ class DeposPendController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('depositoPendiente')->where('id', $id)->delete();
+        return "Se Elimino id: ".$id;
     }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroyall()
+    {
+        //DB::table('depositoPendiente')->delete();
+        DB::table('depositoPendiente')->truncate();
+        return "Hecho!";
+    }    
 }
