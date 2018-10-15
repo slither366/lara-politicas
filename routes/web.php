@@ -17,7 +17,8 @@ Route::get('/', function () {
     //echo "<a href=".route('contac').">Contactos</a>";
 });
 */
-        // Authentication Routes...
+// Authentication Routes...
+/*
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
@@ -37,9 +38,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/',['as'=>'viewLogeo', function(){
 	return view('layouts/app');
 }]);
-
+*/
 //----------------------------- REST DEPOSITOS PENDIENTES ----------------------------
-
+/*
 Route::get('postDepositosPendientes',['as'=>'depositos.index','uses'=>'DeposPendController@index']);
 
 Route::get('postDepositosPendientes/create',['as'=>'depositospendientes.create','uses'=>'DeposPendController@create']);
@@ -51,7 +52,7 @@ Route::delete('deleteDepositosPendientes',['as'=>'depositos.delete','uses'=>'Dep
 Route::delete('deleteDepositosPendientes/{id}',['as'=>'depositos.id.delete','uses'=>'DeposPendController@destroy']);
 
 Route::put('deleteDepositosPendientes/{id}',['as' => 'depositos.update','uses'=>'DeposPendController@update']);
-
+*/
 //--------------------------------------------------------------------------------------
 Route::get('Principal', ['as'=>'viewPrincipal',function(){
 	return view('principal');
@@ -104,6 +105,7 @@ Route::get('contactos', ['as' => 'contac', function(){
 Route::get('/home', 'HomeController@index')->name('home');
 */
 
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+	

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDepositoPendienteTable extends Migration
+class CreateDepositoPendientesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateDepositoPendienteTable extends Migration
      */
     public function up()
     {
-        Schema::create('depositopendiente', function (Blueprint $table) {
+        Schema::create('deposito_pendientes', function (Blueprint $table) {
             $table->increments('id')->index();
             $table->char('cod_local',3);
             $table->string('dia_mes',10);
@@ -30,6 +30,6 @@ class CreateDepositoPendienteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('depositoPendiente');
+        Schema::dropIfExists('deposito_pendientes');
     }
 }
